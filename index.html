@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #dde7fb; /* bleu pastel clair */
+      background: #fffbe6; /* Jaune pastel doux */
       color: #222;
     }
 
@@ -77,12 +77,53 @@
     }
 
     .info-section {
-      background: #f2f6fd;
+      background: #fffdf2;
       padding: 40px 20px;
       margin-top: 60px;
       text-align: center;
       font-size: 1.1em;
       color: #333;
+    }
+
+    .details-section {
+      background: #fffdf2;
+      padding: 60px 20px;
+      margin-top: 60px;
+    }
+
+    .details-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      justify-content: space-between;
+    }
+
+    .tracklist, .infos {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .tracklist h2, .infos h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      font-weight: 700;
+      border-bottom: 3px solid #222;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .tracklist strong {
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .infos p {
+      margin: 10px 0;
+      font-size: 1em;
+      line-height: 1.4;
     }
 
     @media (max-width: 768px) {
@@ -93,6 +134,11 @@
 
       .right {
         text-align: center;
+      }
+
+      .details-container {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -111,42 +157,45 @@
 
   <div class="info-section">
     Édition limitée à 100 exemplaires — Pressage unique. Expédition prévue courant 2025. Inclus : pochette imprimée, vinyle 2LP, livret digital.
-  </div><div class="details-section">
-  <div class="details-container">
-    <div class="tracklist">
-      <h2>Tracklist</h2>
-      <div>
-        <strong>FACE A</strong><br><br>
-        1. <strong>BARBECUE</strong><br>
-        2. <strong>DEADPOOL</strong><br>
-        3. <strong>BABIMURBABY</strong><br>
-        4. <strong>MEDECINE TAKE</strong><br>
-        5. <strong>RIVIÈRE</strong><br>
-        6. <strong>MORTADELLE</strong><br>
-        7. <strong>DIAMANTS NOIR</strong><br>
-        8. <strong>LE HOLLANDAIS</strong><br>
-        9. <strong>CORTÈGE ROYAL</strong><br><br>
+  </div>
 
-        <strong>FACE B</strong><br><br>
-        10. <strong>SKOL</strong><br>
-        11. <strong>2031</strong><br>
-        12. <strong>CLIGNANCOURT</strong><br>
-        13. <strong>TRI MARTOLOD</strong><br>
-        14. <strong>MASSACRE À LA TRONÇONNEUSE</strong><br>
-        15. <strong>CRAZY GIRL</strong><br>
-        16. <strong>JE NE CANAWOK PAS AVEC LES PELUCHES</strong><br>
-        17. <strong>UN GOTHIQUE ET UNE BIBLE</strong><br>
-        18. <strong>CINDERELA</strong>
+  <div class="details-section">
+    <div class="details-container">
+      <div class="tracklist">
+        <h2>Tracklist</h2>
+        <div>
+          <strong>FACE A</strong><br><br>
+          1. <strong>BARBECUE</strong><br>
+          2. <strong>DEADPOOL</strong><br>
+          3. <strong>BABIMURBABY</strong><br>
+          4. <strong>MEDECINE TAKE</strong><br>
+          5. <strong>RIVIÈRE</strong><br>
+          6. <strong>MORTADELLE</strong><br>
+          7. <strong>DIAMANTS NOIR</strong><br>
+          8. <strong>LE HOLLANDAIS</strong><br>
+          9. <strong>CORTÈGE ROYAL</strong><br><br>
+
+          <strong>FACE B</strong><br><br>
+          10. <strong>SKOL</strong><br>
+          11. <strong>2031</strong><br>
+          12. <strong>CLIGNANCOURT</strong><br>
+          13. <strong>TRI MARTOLOD</strong><br>
+          14. <strong>MASSACRE À LA TRONÇONNEUSE</strong><br>
+          15. <strong>CRAZY GIRL</strong><br>
+          16. <strong>JE NE CANAWOK PAS AVEC LES PELUCHES</strong><br>
+          17. <strong>UN GOTHIQUE ET UNE BIBLE</strong><br>
+          18. <strong>CINDERELA</strong>
+        </div>
       </div>
-    </div>
-    <div class="infos">
-      <h2>Informations</h2>
-      <p><strong>Artiste :</strong> RETRO X</p>
-      <p><strong>Label :</strong> DGBE</p>
-      <p><strong>Format :</strong> 1 x 12"(180g)</p>
-      <p><strong>Pays :</strong> France</p>
-      <p><strong>Genres :</strong><br> RAP</p>
-      <p><strong>Date de livraison estimée :</strong><br> 8 semaines après le lancement de la production</p>
+      <div class="infos">
+        <h2>Informations</h2>
+        <p><strong>Artiste :</strong> RETRO X</p>
+        <p><strong>Label :</strong> DGBE</p>
+        <p><strong>Format :</strong> 1 x 12" (180g)</p>
+        <p><strong>Pays :</strong> France</p>
+        <p><strong>Genres :</strong><br> RAP</p>
+        <p><strong>Date de livraison estimée :</strong><br> 8 semaines après le lancement de la production</p>
+      </div>
     </div>
   </div>
 </body>
