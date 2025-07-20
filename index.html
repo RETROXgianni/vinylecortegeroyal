@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Précommande — Retro X</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      background: #eaf4fb; /* bleu pastel très clair */
-      font-family: sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background: #dde7fb; /* bleu pastel clair */
+      color: #222;
     }
 
     .container {
@@ -17,6 +18,7 @@
       margin: 60px auto;
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       gap: 60px;
       padding: 0 20px;
     }
@@ -24,76 +26,74 @@
     .left {
       flex: 1;
       max-width: 500px;
-      position: relative;
+      text-align: center;
     }
 
     .left img {
       width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    .carousel-arrows {
-      position: absolute;
-      bottom: 10px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 0 10px;
-    }
-
-    .carousel-arrows span {
-      font-size: 24px;
-      cursor: pointer;
-      color: #555;
-      background: rgba(255,255,255,0.8);
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      max-width: 450px;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
     }
 
     .right {
       flex: 1;
       min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
     }
 
     .title {
-      font-family: 'Cinzel', serif;
-      font-size: 2.5em;
-      font-weight: 600;
+      font-size: 2.8em;
+      font-weight: 700;
       margin-bottom: 10px;
     }
 
     .artist {
-      font-family: 'Cinzel', serif;
       font-size: 1.5em;
+      font-weight: 500;
+      color: #444;
       margin-bottom: 30px;
-      color: #333;
     }
 
     .preorder-btn {
       background: black;
       color: white;
-      padding: 14px 24px;
+      padding: 16px 26px;
       font-size: 1em;
+      font-weight: 600;
       border: none;
-      border-radius: 8px;
+      border-radius: 12px;
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
-      margin-bottom: 30px;
+      transition: background 0.3s;
+    }
+
+    .preorder-btn:hover {
+      background: #333;
     }
 
     .info-section {
-      background: #f5f9fc; /* fond encore plus clair */
+      background: #f2f6fd;
       padding: 40px 20px;
       margin-top: 60px;
       text-align: center;
-      font-size: 1em;
+      font-size: 1.1em;
       color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .right {
+        text-align: center;
+      }
     }
   </style>
 </head>
@@ -101,10 +101,6 @@
   <div class="container">
     <div class="left">
       <img src="COVER RETRO X HD.jpg" alt="Cover Vinyle Retro X" />
-      <div class="carousel-arrows">
-        <span>&larr;</span>
-        <span>&rarr;</span>
-      </div>
     </div>
     <div class="right">
       <div class="title">Cortège Royal</div>
