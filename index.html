@@ -3,138 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Précommande Vinyle</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <title>Précommande — Retro X</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f5f5f5;
-      color: #222;
+      background: #eaf4fb; /* bleu pastel très clair */
+      font-family: sans-serif;
     }
 
     .container {
-      max-width: 1000px;
-      margin: 40px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-
-    .top-section {
+      max-width: 1200px;
+      margin: 60px auto;
       display: flex;
       flex-wrap: wrap;
-      gap: 40px;
+      gap: 60px;
+      padding: 0 20px;
     }
 
-    .vinyl-cover {
+    .left {
       flex: 1;
-      max-width: 400px;
+      max-width: 500px;
+      position: relative;
     }
 
-    .vinyl-cover img {
+    .left img {
       width: 100%;
       border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
     }
 
-    .info {
-      flex: 2;
+    .carousel-arrows {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 10px;
     }
 
-    h1 {
-      font-size: 2em;
+    .carousel-arrows span {
+      font-size: 24px;
+      cursor: pointer;
+      color: #555;
+      background: rgba(255,255,255,0.8);
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .right {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5em;
+      font-weight: 600;
       margin-bottom: 10px;
     }
 
-    .description {
-      margin: 20px 0;
+    .artist {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5em;
+      margin-bottom: 30px;
+      color: #333;
     }
 
     .preorder-btn {
-      display: inline-block;
       background: black;
       color: white;
       padding: 14px 24px;
-      font-weight: 600;
+      font-size: 1em;
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s;
       text-decoration: none;
+      display: inline-block;
+      margin-bottom: 30px;
     }
 
-    .preorder-btn:hover {
-      background: #333;
-    }
-
-    .progress {
-      margin-top: 20px;
-    }
-
-    .progress-bar {
-      height: 16px;
-      background: #ddd;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      width: 50%; /* à modifier dynamiquement */
-      height: 100%;
-      background: #1abc9c;
-    }
-
-    .progress-text {
-      margin-top: 8px;
-      font-size: 14px;
-      text-align: right;
-    }
-
-    .tracklist {
-      margin-top: 40px;
-    }
-
-    .tracklist h2 {
-      margin-bottom: 16px;
-    }
-
-    .track {
-      margin-bottom: 10px;
-      padding: 10px;
-      background: #f0f0f0;
-      border-radius: 8px;
+    .info-section {
+      background: #f5f9fc; /* fond encore plus clair */
+      padding: 40px 20px;
+      margin-top: 60px;
+      text-align: center;
+      font-size: 1em;
+      color: #333;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="top-section">
-      <div class="vinyl-cover">
-        <img src="https://via.placeholder.com/400" alt="Cover Vinyle" />
-      </div>
-      <div class="info">
-        <h1>Nom du projet / album</h1>
-        <p class="description">
-          Ceci est une description courte de ton vinyle. Parle de l’univers, du concept, du son...
-        </p>
-        <a href="#" class="preorder-btn">Précommander maintenant</a>
-        <div class="progress">
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: 50%;"></div>
-          </div>
-          <div class="progress-text">50 / 100 précommandes atteintes</div>
-        </div>
+    <div class="left">
+      <img src="COVER RETRO X HD.jpg" alt="Cover Vinyle Retro X" />
+      <div class="carousel-arrows">
+        <span>&larr;</span>
+        <span>&rarr;</span>
       </div>
     </div>
+    <div class="right">
+      <div class="title">Cortège Royal</div>
+      <div class="artist">Retro X</div>
+      <a href="#" class="preorder-btn">Précommander maintenant</a>
+    </div>
+  </div>
 
-    <div class="tracklist">
-      <h2>Tracklist</h2>
-      <div class="track">01. Intro</div>
-      <div class="track">02. Cortège Royal</div>
-      <div class="track">03. Larmes Souterraines</div>
-      <div class="track">04. Outro</div>
-    </div>
+  <div class="info-section">
+    Édition limitée à 100 exemplaires — Pressage unique. Expédition prévue courant 2025. Inclus : pochette imprimée, vinyle 2LP, livret digital.
   </div>
 </body>
 </html>
