@@ -6,11 +6,27 @@
   <title>Précommande — Retro X</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg-light: #fff5cc;
+      --bg-box: #fffbe0;
+      --text: #222;
+      --accent: black;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-light: #1a1a1a;
+        --bg-box: #2a2a2a;
+        --text: #f0f0f0;
+        --accent: #f5f5f5;
+      }
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #fffbe6; /* Jaune pastel doux */
-      color: #222;
+      background: var(--bg-light);
+      color: var(--text);
     }
 
     .container {
@@ -21,19 +37,28 @@
       justify-content: center;
       gap: 60px;
       padding: 0 20px;
+      animation: fadeInUp 1.2s ease;
     }
 
     .left {
       flex: 1;
       max-width: 500px;
       text-align: center;
+      perspective: 1000px;
     }
 
     .left img {
       width: 100%;
       max-width: 450px;
       border-radius: 16px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+      transform: rotateX(3deg) rotateY(-2deg);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .left img:hover {
+      transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+      box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
     }
 
     .right {
@@ -43,6 +68,7 @@
       flex-direction: column;
       justify-content: center;
       text-align: left;
+      animation: fadeInUp 1.5s ease;
     }
 
     .title {
@@ -54,13 +80,13 @@
     .artist {
       font-size: 1.5em;
       font-weight: 500;
-      color: #444;
+      color: var(--text);
       margin-bottom: 30px;
     }
 
     .preorder-btn {
-      background: black;
-      color: white;
+      background: var(--accent);
+      color: var(--bg-light);
       padding: 16px 26px;
       font-size: 1em;
       font-weight: 600;
@@ -77,16 +103,15 @@
     }
 
     .info-section {
-      background: #fffdf2;
+      background: var(--bg-box);
       padding: 40px 20px;
       margin-top: 60px;
       text-align: center;
       font-size: 1.1em;
-      color: #333;
     }
 
     .details-section {
-      background: #fffdf2;
+      background: var(--bg-box);
       padding: 60px 20px;
       margin-top: 60px;
     }
@@ -109,7 +134,7 @@
       font-size: 1.8em;
       margin-bottom: 20px;
       font-weight: 700;
-      border-bottom: 3px solid #222;
+      border-bottom: 3px solid var(--text);
       display: inline-block;
       padding-bottom: 5px;
     }
@@ -124,6 +149,17 @@
       margin: 10px 0;
       font-size: 1em;
       line-height: 1.4;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     @media (max-width: 768px) {
