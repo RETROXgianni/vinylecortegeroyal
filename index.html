@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-light: #d7ecf9; /* bleu très clair (rappel chemise) */
+      --bg-light: #d7ecf9;
       --bg-box: #eaf4fb;
       --text: #222;
       --accent: black;
@@ -53,17 +53,20 @@
       max-width: 450px;
       border-radius: 16px;
       animation: float 6s ease-in-out infinite;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.35);
+      position: relative;
+      z-index: 2;
     }
 
     .vinyl {
       position: absolute;
-      top: 20%;
-      right: -20%;
-      width: 200px;
-      transform: rotate(-10deg);
-      z-index: -1;
-      opacity: 0.9;
+      top: 50%;
+      left: -80px;
+      width: 280px;
+      transform: translateY(-50%) rotate(-6deg);
+      z-index: 1;
+      opacity: 1;
+      filter: drop-shadow(4px 6px 8px rgba(0, 0, 0, 0.3));
     }
 
     .right {
