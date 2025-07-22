@@ -28,47 +28,45 @@
 
     .vinyl-display {
       position: relative;
-      width: 360px;
-      height: 360px;
+      width: 320px;
+      height: 320px;
       margin-bottom: 30px;
+      perspective: 1000px;
     }
 
     .vinyl {
       position: absolute;
-      width: 340px;
+      width: 100%;
       top: 0;
-      left: 10px;
+      left: 0;
       z-index: 1;
-      animation: spin 60s linear infinite;
-      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.1));
+      animation: spin 30s linear infinite;
+      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
     }
 
     .cover {
       position: absolute;
-      width: 300px;
-      height: 300px;
+      width: 280px;
+      height: 280px;
       left: 50%;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%) rotateY(0deg);
       z-index: 2;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
       transition: transform 1s ease-in-out;
-    }
-
-    .cover:hover {
-      transform: translate(-50%, -52%) scale(1.01);
+      transform-style: preserve-3d;
     }
 
     .shadow {
       position: absolute;
-      bottom: -25px;
+      bottom: -20px;
       left: 50%;
       transform: translateX(-50%);
-      width: 200px;
-      height: 28px;
-      background: rgba(0, 0, 0, 0.15);
+      width: 180px;
+      height: 24px;
+      background: rgba(0, 0, 0, 0.2);
       border-radius: 50%;
-      filter: blur(12px);
+      filter: blur(10px);
       z-index: 0;
     }
 
@@ -97,35 +95,11 @@
       cursor: pointer;
       text-decoration: none;
       transition: transform 0.3s, background 0.3s;
-      margin-bottom: 20px;
     }
 
     .preorder-btn:hover {
       background: #333;
       transform: scale(1.05);
-    }
-
-    .tracklist {
-      max-width: 400px;
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    .tracklist h3 {
-      margin-bottom: 8px;
-      font-size: 1.4em;
-      font-weight: 600;
-    }
-
-    .tracklist ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .tracklist li {
-      margin-bottom: 6px;
-      font-weight: 500;
     }
 
     .rotate-btn {
@@ -136,7 +110,7 @@
       padding: 12px 24px;
       border-radius: 10px;
       cursor: pointer;
-      margin-top: 10px;
+      margin-bottom: 30px;
       transition: background 0.3s, transform 0.3s;
     }
 
@@ -156,28 +130,27 @@
   <div class="container">
     <div class="vinyl-display">
       <img src="vinyle.png" alt="Vinyle" class="vinyl" />
-      <img src="COVER RETRO X HD.jpg" alt="Cover Vinyle Retro X" class="cover" />
+      <img src="COVER RETRO X HD.jpg" alt="Cover Vinyle Retro X" class="cover" id="cover" />
       <div class="shadow"></div>
     </div>
 
-    <button class="rotate-btn">🔁 Voir en 3D</button>
+    <button class="rotate-btn" onclick="toggleRotation()">🔁 Voir en 3D</button>
 
     <div class="title">Cortège Royal</div>
     <div class="artist">Retro X</div>
     <a href="#form" class="preorder-btn">Précommander maintenant</a>
-
-    <div class="tracklist">
-      <h3>Tracklist</h3>
-      <ul>
-        <li><strong>Face A</strong></li>
-        <li>1. Intro</li>
-        <li>2. Soleil Noir</li>
-        <li>3. Cortège</li>
-        <li>4. Lune Rousse</li>
-        <li>5. Outro</li>
-      </ul>
-    </div>
   </div>
+
+  <script>
+    let rotated = false;
+    function toggleRotation() {
+      const cover = document.getElementById('cover');
+      rotated = !rotated;
+      cover.style.transform = rotated 
+        ? 'translate(-50%, -50%) rotateY(180deg)' 
+        : 'translate(-50%, -50%) rotateY(0deg)';
+    }
+  </script>
 
 </body>
 </html>
