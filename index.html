@@ -13,15 +13,6 @@
       --accent: black;
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-light: #1a1a1a;
-        --bg-box: #2a2a2a;
-        --text: #f0f0f0;
-        --accent: #f5f5f5;
-      }
-    }
-
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -37,34 +28,31 @@
       justify-content: center;
       gap: 60px;
       padding: 0 20px;
-      animation: fadeInUp 1.2s ease;
     }
 
     .left {
       flex: 1;
       max-width: 500px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       position: relative;
-      perspective: 1000px;
+    }
+
+    .cover {
+      width: 250px; /* Taille réduite de la cover */
+      z-index: 2;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
     }
 
     .vinyl {
       position: absolute;
-      top: 50%;
-      left: -70px;
-      width: 340px;
-      transform: translateY(-50%) rotate(-6deg);
+      width: 320px; /* Taille agrandie du vinyle */
+      right: -100px;
+      top: 20px;
       z-index: 1;
-      filter: drop-shadow(6px 8px 12px rgba(0, 0, 0, 0.35));
-    }
-
-    .cover-fly {
-      width: 78%;
-      border-radius: 16px;
-      animation: float 6s ease-in-out infinite;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
-      position: relative;
-      z-index: 2;
+      transform: rotate(-5deg);
+      filter: drop-shadow(6px 8px 14px rgba(0, 0, 0, 0.35));
     }
 
     .right {
@@ -74,7 +62,6 @@
       flex-direction: column;
       justify-content: center;
       text-align: left;
-      animation: fadeInUp 1.5s ease;
     }
 
     .title {
@@ -190,23 +177,6 @@
       background: #333;
     }
 
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0px); }
-    }
-
     @media (max-width: 768px) {
       .container {
         flex-direction: column;
@@ -221,13 +191,17 @@
         flex-direction: column;
         align-items: flex-start;
       }
+
+      .vinyl {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="left">
-      <img src="COVER RETRO X HD.jpg" alt="Cover Vinyle Retro X" class="cover-fly" />
+      <img src="COVER RETRO X HD.jpg" alt="Cover Vinyle Retro X" class="cover" />
       <img src="vinyle.png" alt="Vinyle" class="vinyl" />
     </div>
     <div class="right">
