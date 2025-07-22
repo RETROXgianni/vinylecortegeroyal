@@ -7,28 +7,42 @@ window.addEventListener("DOMContentLoaded", () => {
     0.1,
     1000
   );
-  camera.position.z = 6;
+  camera.position.z = 5;
 
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(window.innerWidth, window.innerHeight);
-  document.getElementById("scene-container").appendChild(renderer.domElement);
+  document.body.appendChild(renderer.domElement);
 
-  const geometry = new THREE.CylinderGeometry(2, 2, 0.1, 64);
-  const material = new THREE.MeshStandardMaterial({ color: 0x111111 });
-  const vinyle = new THREE.Mesh(geometry, material);
+  // Chargement des textures
+  const loader = new THREE.TextureLoader();
+  const baseTexture = loader.load('vinyl_PNG18.png');
+  const centerTexture = loader.load('vinyle_center.jpg');
+
+  // Géométrie du vinyle
+  const geometry = new THREE.CylinderGeometry(2, 2, 0.05, 64);
+
+  // Matériaux :
+  const materials = [
+    new THREE.MeshBasicMaterial({ color: 0x000000 }), // côté
+    new THREE.MeshBasicMaterial({ map: baseTexture }), // face 1
+    new THREE.MeshBasicMaterial({ map: centerTexture }) // face 2
+  ];
+
+  const vinyle = new THREE.Mesh(geometry, materials);
   vinyle.rotation.x = Math.PI / 2;
   scene.add(vinyle);
 
-  const light = new THREE.DirectionalLight(0xffffff, 1.5);
-  light.position.set(3, 5, 5);
+  // Lumière
+  const light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(2, 2, 5);
   scene.add(light);
-  scene.add(new THREE.AmbientLight(0x444444));
 
   function animate() {
     requestAnimationFrame(animate);
     vinyle.rotation.z += 0.01;
     renderer.render(scene, camera);
   }
+
   animate();
 
   window.addEventListener("resize", () => {
