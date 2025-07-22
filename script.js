@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // Chargement des textures
   const loader = new THREE.TextureLoader();
   const baseTexture = loader.load('vinyl_PNG18.png');
-  const centerTexture = loader.load('vinyle_center.jpg');
+  const centerTexture = loader.load('cortege royal sans texte 3.png');
 
   // Géométrie du vinyle
   const geometry = new THREE.CylinderGeometry(2, 2, 0.05, 64);
