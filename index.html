@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>RETRO X – Cortège Royal</title>
-
-  <!-- Police Poppins -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-  <!-- Lien vers le CSS -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-  <header>
-    <h1>RETRO X – Cortège Royal</h1>
-    <p class="status">Disponible</p>
-  </header>
-
-  <section class="product">
-    <div class="cover-3d">
-      <img class="cover-img" src="cover-retro-x.jpg" alt="Cover RETRO X">
-      <img class="vinyl-img" src="vinyle.png" alt="Vinyle RETRO X">
+  <div class="container">
+    <div class="left">
+      <div class="cover-wrapper">
+        <img src="cover-retro-x.jpg" alt="RETRO X Cover" class="cover" />
+        <img src="vinyle.png" alt="Vinyle" class="vinyl" />
+      </div>
     </div>
+    <div class="right">
+      <h1>RETRO X – Cortège Royal</h1>
+      <p class="status">Disponible</p>
 
-    <div class="details">
-      <h2>Détails</h2>
-      <ul>
-        <li><strong>Format :</strong> Vinyle 12″ – 180 g</li>
-        <li><strong>Genre :</strong> Rap / Trap</li>
-        <li><strong>Année :</strong> 2025</li>
-      </ul>
+      <div class="details">
+        <p><strong>Format :</strong> Vinyle 12″ – 180 g</p>
+        <p><strong>Genre :</strong> Rap / Trap</p>
+        <p><strong>Année :</strong> 2025</p>
+      </div>
+
+      <div class="tracklist">
+        <h2>Tracklist</h2>
+        <ul>
+          <li>1. Intro</li>
+          <li>2. Couronne</li>
+          <li>3. Roses Noires</li>
+          <li>4. Ombres</li>
+          <li>5. Dernier Mot</li>
+        </ul>
+      </div>
     </div>
-  </section>
-
-  <section class="tracklist">
-    <h2>Tracklist (exemple)</h2>
-    <ol>
-      <li>Intro</li>
-      <li>Couronne</li>
-      <li>Roses Noires</li>
-      <li>Ombres</li>
-      <li>Dernier Mot</li>
-    </ol>
-  </section>
-
+  </div>
 </body>
 </html>
