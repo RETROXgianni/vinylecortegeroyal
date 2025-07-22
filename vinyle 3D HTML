@@ -10,6 +10,8 @@
 
   <!-- Import de Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
+
+  <!-- Ton script -->
   <script src="script.js"></script>
 </body>
 </html>
