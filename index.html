@@ -1,46 +1,23 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RETRO X – Cortège Royal</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <div class="cover-shadow">
-        <img
-          src="cover-retro-x.jpg"
-          alt="RETRO X Cover"
-          class="cover"
-        />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RETRO X – Cortège Royal</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <div class="vinyl-section">
+      <div class="cover-container">
+        <img src="cover-retro-x.jpg" alt="Pochette vinyle RETRO X" class="cover-img" />
       </div>
-      <div class="vinyl-wrapper">
-        <img
-          src="vinyle.png"
-          alt="Vinyle"
-          class="vinyl"
-        />
+      <div class="vinyl-container">
+        <img src="vinyle.png" alt="Vinyle RETRO X" class="vinyl-img" />
       </div>
     </div>
-    <h1>RETRO X – Cortège Royal</h1>
-
-    <script>
-      // Animation de rotation du vinyle
-      const vinyl = document.querySelector(".vinyl");
-      let angle = 0;
-      function rotateVinyl() {
-        angle += 0.1;
-        vinyl.style.transform = `rotate(${angle}deg)`;
-        requestAnimationFrame(rotateVinyl);
-      }
-      rotateVinyl();
-    </script>
-  </body>
+    <h1 class="title">RETRO X – Cortège Royal</h1>
+  </div>
+</body>
 </html>
