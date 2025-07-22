@@ -11,7 +11,7 @@
   <!-- Import de Three.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r148/three.min.js"></script>
 
-  <!-- Ton script -->
-  <script src="script.js"></script>
+  <!-- Ton script, maintenant appelé APRÈS chargement de la page -->
+  <script src="script.js" defer></script>
 </body>
 </html>
