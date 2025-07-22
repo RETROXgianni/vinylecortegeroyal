@@ -36,9 +36,9 @@
 
     .vinyl {
       position: absolute;
-      width: 360px;
-      left: 190px;
-      top: -20px;
+      width: 100%;
+      top: 0;
+      left: 0;
       z-index: 1;
       animation: spin 30s linear infinite;
       filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
@@ -46,10 +46,11 @@
 
     .cover {
       position: absolute;
-      width: 260px;
-      height: 260px;
-      left: 0;
-      top: 0;
+      width: 280px;
+      height: 280px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) rotateY(0deg);
       z-index: 2;
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
       transition: transform 1s ease-in-out;
@@ -59,12 +60,13 @@
     .shadow {
       position: absolute;
       bottom: -20px;
-      left: 130px;
-      width: 300px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 180px;
       height: 24px;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.2);
       border-radius: 50%;
-      filter: blur(12px);
+      filter: blur(10px);
       z-index: 0;
     }
 
@@ -119,7 +121,7 @@
     }
 
     .infos {
-      max-width: 800px;
+      max-width: 600px;
       padding: 0 20px;
       line-height: 1.6;
       font-size: 1em;
@@ -161,41 +163,27 @@
     <a href="#form" class="preorder-btn">Précommander maintenant</a>
 
     <div class="infos">
-      <h2>Tracklist</h2>
-      <strong>Face A :</strong>
+      <h2>Face A — Tracklist</h2>
       <ul>
-        <li>Barbecue</li>
-        <li>Deadpool</li>
-        <li>Babimurbaby</li>
-        <li>Medecine take</li>
-        <li>Rivière</li>
-        <li>Mortadelle</li>
-        <li>Diamants noir</li>
-        <li>Le Hollandais</li>
-        <li>Cortège Royal</li>
+        <li>1. Intro</li>
+        <li>2. 199X</li>
+        <li>3. Azur</li>
+        <li>4. Dentelles Noires</li>
+        <li>5. Versailles</li>
+        <li>6. Sentimental</li>
+        <li>7. Interlude</li>
+        <li>8. Kuro</li>
+        <li>9. Rose</li>
+        <li>10. Outro</li>
       </ul>
 
-      <strong>Face B :</strong>
+      <h2>Caractéristiques</h2>
       <ul>
-        <li>Skol</li>
-        <li>2031</li>
-        <li>Clignancourt</li>
-        <li>Tri Martolod</li>
-        <li>Massacre à la tronçonneuse</li>
-        <li>Crazy girl</li>
-        <li>Je ne canawok pas avec les peluches</li>
-        <li>Un gothique et une bible</li>
-        <li>CINDERELA</li>
-      </ul>
-
-      <h2>Informations</h2>
-      <ul>
-        <li>Artiste : RETRO X</li>
-        <li>Label : DGBE</li>
-        <li>Format : 1 x 12" (180g)</li>
-        <li>Pays : France</li>
-        <li>Genres : RAP</li>
-        <li>Date de livraison estimée : 8 semaines après le lancement de la production</li>
+        <li>Format : Vinyle 12" (33 RPM)</li>
+        <li>Edition limitée à 300 exemplaires</li>
+        <li>Pochette illustrée exclusive</li>
+        <li>Pressage de haute qualité</li>
+        <li>Inclut un code de téléchargement</li>
       </ul>
     </div>
   </div>
@@ -206,8 +194,8 @@
       const cover = document.getElementById('cover');
       rotated = !rotated;
       cover.style.transform = rotated 
-        ? 'translate(0, 0) rotateY(180deg)' 
-        : 'translate(0, 0) rotateY(0deg)';
+        ? 'translate(-50%, -50%) rotateY(180deg)' 
+        : 'translate(-50%, -50%) rotateY(0deg)';
     }
   </script>
 
