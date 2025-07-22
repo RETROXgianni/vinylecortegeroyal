@@ -1,7 +1,5 @@
-// Création de la scène
 const scene = new THREE.Scene();
 
-// Création de la caméra
 const camera = new THREE.PerspectiveCamera(
   75,
   window.innerWidth / window.innerHeight,
@@ -10,25 +8,22 @@ const camera = new THREE.PerspectiveCamera(
 );
 camera.position.z = 6;
 
-// Rendu
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.getElementById("scene-container").appendChild(renderer.domElement);
 
-// Création du vinyle (cylindre plat)
+// Création du vinyle
 const geometry = new THREE.CylinderGeometry(2, 2, 0.1, 64);
 const material = new THREE.MeshStandardMaterial({ color: 0x111111 });
 const vinyle = new THREE.Mesh(geometry, material);
-vinyle.rotation.x = Math.PI / 2; // mettre à plat
+vinyle.rotation.x = Math.PI / 2;
 scene.add(vinyle);
 
-// Ajout d'une lumière directionnelle
+// Lumières
 const light = new THREE.DirectionalLight(0xffffff, 1.5);
 light.position.set(3, 5, 5);
 scene.add(light);
-
-// Lumière ambiante
-scene.add(new THREE.AmbientLight(0x555555));
+scene.add(new THREE.AmbientLight(0x444444));
 
 // Animation
 function animate() {
