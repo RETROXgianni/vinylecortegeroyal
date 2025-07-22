@@ -95,6 +95,7 @@
       cursor: pointer;
       text-decoration: none;
       transition: transform 0.3s, background 0.3s;
+      margin-bottom: 40px;
     }
 
     .preorder-btn:hover {
@@ -119,6 +120,27 @@
       transform: scale(1.02);
     }
 
+    .infos {
+      max-width: 600px;
+      padding: 0 20px;
+      line-height: 1.6;
+      font-size: 1em;
+    }
+
+    .infos h2 {
+      font-size: 1.4em;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    .infos ul {
+      padding-left: 20px;
+    }
+
+    .infos li {
+      margin-bottom: 8px;
+    }
+
     @keyframes spin {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
@@ -139,6 +161,31 @@
     <div class="title">Cortège Royal</div>
     <div class="artist">Retro X</div>
     <a href="#form" class="preorder-btn">Précommander maintenant</a>
+
+    <div class="infos">
+      <h2>Face A — Tracklist</h2>
+      <ul>
+        <li>1. Intro</li>
+        <li>2. 199X</li>
+        <li>3. Azur</li>
+        <li>4. Dentelles Noires</li>
+        <li>5. Versailles</li>
+        <li>6. Sentimental</li>
+        <li>7. Interlude</li>
+        <li>8. Kuro</li>
+        <li>9. Rose</li>
+        <li>10. Outro</li>
+      </ul>
+
+      <h2>Caractéristiques</h2>
+      <ul>
+        <li>Format : Vinyle 12" (33 RPM)</li>
+        <li>Edition limitée à 300 exemplaires</li>
+        <li>Pochette illustrée exclusive</li>
+        <li>Pressage de haute qualité</li>
+        <li>Inclut un code de téléchargement</li>
+      </ul>
+    </div>
   </div>
 
   <script>
