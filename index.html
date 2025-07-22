@@ -7,9 +7,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-light: #d7ecf9;
+      --bg-light: #d7ecf9; /* bleu très clair (rappel chemise) */
+      --bg-box: #eaf4fb;
       --text: #222;
       --accent: black;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-light: #1a1a1a;
+        --bg-box: #2a2a2a;
+        --text: #f0f0f0;
+        --accent: #f5f5f5;
+      }
     }
 
     body {
@@ -20,82 +30,76 @@
     }
 
     .container {
+      max-width: 1200px;
+      margin: 60px auto;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 80px 20px 60px;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 60px;
+      padding: 0 20px;
+      animation: fadeInUp 1.2s ease;
     }
 
-    .vinyl-display {
+    .left {
+      flex: 1;
+      max-width: 500px;
+      text-align: center;
       position: relative;
-      width: 320px;
-      height: 320px;
-      margin-bottom: 30px;
       perspective: 1000px;
+    }
+
+    .cover-fly {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 16px;
+      animation: float 6s ease-in-out infinite;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
 
     .vinyl {
       position: absolute;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      animation: spin 30s linear infinite;
-      filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.15));
+      top: 20%;
+      right: -20%;
+      width: 200px;
+      transform: rotate(-10deg);
+      z-index: -1;
+      opacity: 0.9;
     }
 
-    .cover {
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%) rotateY(0deg);
-      z-index: 2;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-      transition: transform 1s ease-in-out;
-      transform-style: preserve-3d;
-    }
-
-    .shadow {
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 180px;
-      height: 24px;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 50%;
-      filter: blur(10px);
-      z-index: 0;
+    .right {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: left;
+      animation: fadeInUp 1.5s ease;
     }
 
     .title {
-      font-size: 2.6em;
+      font-size: 2.8em;
       font-weight: 700;
-      text-align: center;
       margin-bottom: 10px;
     }
 
     .artist {
-      font-size: 1.3em;
+      font-size: 1.5em;
       font-weight: 500;
-      text-align: center;
       margin-bottom: 30px;
     }
 
     .preorder-btn {
       background: var(--accent);
       color: var(--bg-light);
-      padding: 16px 28px;
+      padding: 16px 26px;
       font-size: 1em;
       font-weight: 600;
       border: none;
       border-radius: 12px;
       cursor: pointer;
       text-decoration: none;
+      display: inline-block;
       transition: transform 0.3s, background 0.3s;
-      margin-bottom: 40px;
     }
 
     .preorder-btn:hover {
@@ -103,101 +107,183 @@
       transform: scale(1.05);
     }
 
-    .rotate-btn {
-      background: #f0f0f0;
-      border: none;
-      font-weight: 600;
+    .info-section {
+      background: var(--bg-box);
+      padding: 40px 20px;
+      margin-top: 60px;
+      text-align: center;
+      font-size: 1.1em;
+    }
+
+    .details-section {
+      background: var(--bg-box);
+      padding: 60px 20px;
+      margin-top: 60px;
+    }
+
+    .details-container {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      justify-content: space-between;
+    }
+
+    .tracklist, .infos {
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .tracklist h2, .infos h2 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      font-weight: 700;
+      border-bottom: 3px solid var(--text);
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .tracklist strong {
+      font-weight: 700;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .infos p {
+      margin: 10px 0;
       font-size: 1em;
-      padding: 12px 24px;
+      line-height: 1.4;
+    }
+
+    form {
+      background: var(--bg-box);
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    form button {
+      padding: 14px 22px;
+      background: var(--accent);
+      color: var(--bg-light);
+      border: none;
       border-radius: 10px;
       cursor: pointer;
-      margin-bottom: 30px;
-      transition: background 0.3s, transform 0.3s;
+      font-weight: 600;
+      transition: background 0.3s;
     }
 
-    .rotate-btn:hover {
-      background: #ddd;
-      transform: scale(1.02);
+    form button:hover {
+      background: #333;
     }
 
-    .infos {
-      max-width: 600px;
-      padding: 0 20px;
-      line-height: 1.6;
-      font-size: 1em;
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
-    .infos h2 {
-      font-size: 1.4em;
-      margin-top: 40px;
-      margin-bottom: 10px;
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
     }
 
-    .infos ul {
-      padding-left: 20px;
-    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
 
-    .infos li {
-      margin-bottom: 8px;
-    }
+      .right {
+        text-align: center;
+      }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      .details-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    <div class="vinyl-display">
+    <div class="left">
+      <img src="COVER RETRO X HD.jpg" alt="Cover Vinyle Retro X" class="cover-fly" />
       <img src="vinyle.png" alt="Vinyle" class="vinyl" />
-      <img src="COVER RETRO X HD.jpg" alt="Cover Vinyle Retro X" class="cover" id="cover" />
-      <div class="shadow"></div>
     </div>
-
-    <button class="rotate-btn" onclick="toggleRotation()">🔁 Voir en 3D</button>
-
-    <div class="title">Cortège Royal</div>
-    <div class="artist">Retro X</div>
-    <a href="#form" class="preorder-btn">Précommander maintenant</a>
-
-    <div class="infos">
-      <h2>Face A — Tracklist</h2>
-      <ul>
-        <li>1. Intro</li>
-        <li>2. 199X</li>
-        <li>3. Azur</li>
-        <li>4. Dentelles Noires</li>
-        <li>5. Versailles</li>
-        <li>6. Sentimental</li>
-        <li>7. Interlude</li>
-        <li>8. Kuro</li>
-        <li>9. Rose</li>
-        <li>10. Outro</li>
-      </ul>
-
-      <h2>Caractéristiques</h2>
-      <ul>
-        <li>Format : Vinyle 12" (33 RPM)</li>
-        <li>Edition limitée à 300 exemplaires</li>
-        <li>Pochette illustrée exclusive</li>
-        <li>Pressage de haute qualité</li>
-        <li>Inclut un code de téléchargement</li>
-      </ul>
+    <div class="right">
+      <div class="title">Cortège Royal</div>
+      <div class="artist">Retro X</div>
+      <a href="#form" class="preorder-btn">Précommander maintenant</a>
     </div>
   </div>
 
-  <script>
-    let rotated = false;
-    function toggleRotation() {
-      const cover = document.getElementById('cover');
-      rotated = !rotated;
-      cover.style.transform = rotated 
-        ? 'translate(-50%, -50%) rotateY(180deg)' 
-        : 'translate(-50%, -50%) rotateY(0deg)';
-    }
-  </script>
+  <div class="info-section">
+    Édition limitée à 100 exemplaires — Pressage unique. Expédition prévue courant 2025. Inclus : pochette imprimée, vinyle 2LP, livret digital.
+  </div>
 
+  <div class="details-section">
+    <div class="details-container">
+      <div class="tracklist">
+        <h2>Tracklist</h2>
+        <strong>FACE A</strong><br><br>
+        1. <strong>BARBECUE</strong><br>
+        2. <strong>DEADPOOL</strong><br>
+        3. <strong>BABIMURBABY</strong><br>
+        4. <strong>MEDECINE TAKE</strong><br>
+        5. <strong>RIVIÈRE</strong><br>
+        6. <strong>MORTADELLE</strong><br>
+        7. <strong>DIAMANTS NOIR</strong><br>
+        8. <strong>LE HOLLANDAIS</strong><br>
+        9. <strong>CORTÈGE ROYAL</strong><br><br>
+
+        <strong>FACE B</strong><br><br>
+        10. <strong>SKOL</strong><br>
+        11. <strong>2031</strong><br>
+        12. <strong>CLIGNANCOURT</strong><br>
+        13. <strong>TRI MARTOLOD</strong><br>
+        14. <strong>MASSACRE À LA TRONÇONNEUSE</strong><br>
+        15. <strong>CRAZY GIRL</strong><br>
+        16. <strong>JE NE CANAWOK PAS AVEC LES PELUCHES</strong><br>
+        17. <strong>UN GOTHIQUE ET UNE BIBLE</strong><br>
+        18. <strong>CINDERELA</strong>
+      </div>
+      <div class="infos">
+        <h2>Informations</h2>
+        <p><strong>Artiste :</strong> RETRO X</p>
+        <p><strong>Label :</strong> DGBE</p>
+        <p><strong>Format :</strong> 1 x 12" (180g)</p>
+        <p><strong>Pays :</strong> France</p>
+        <p><strong>Genres :</strong><br> RAP</p>
+        <p><strong>Date de livraison estimée :</strong><br> 8 semaines après le lancement de la production</p>
+      </div>
+    </div>
+  </div>
+
+  <form id="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <h2>Précommander</h2>
+    <input type="text" name="name" placeholder="Votre nom" required>
+    <input type="email" name="email" placeholder="Votre email" required>
+    <textarea name="message" placeholder="Adresse de livraison / message..." rows="4"></textarea>
+    <button type="submit">Envoyer la précommande</button>
+  </form>
 </body>
 </html>
