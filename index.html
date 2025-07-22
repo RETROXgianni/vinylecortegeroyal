@@ -21,38 +21,50 @@
     }
 
     .container {
-      max-width: 1200px;
-      margin: 60px auto;
+      max-width: 1000px;
+      margin: 80px auto 60px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 60px;
+      align-items: flex-start;
       padding: 0 20px;
-    }
-
-    .left {
-      flex: 1;
-      max-width: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
       position: relative;
     }
 
+    .vinyl-container {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .shadow {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 360px;
+      height: 40px;
+      background: rgba(0, 0, 0, 0.18);
+      border-radius: 50%;
+      filter: blur(16px);
+      z-index: 0;
+    }
+
     .cover {
-      width: 250px; /* Taille réduite de la cover */
+      width: 280px;
       z-index: 2;
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+      position: relative;
     }
 
     .vinyl {
       position: absolute;
-      width: 320px; /* Taille agrandie du vinyle */
-      right: -100px;
+      width: 380px;
+      right: -130px;
       top: 20px;
       z-index: 1;
-      transform: rotate(-5deg);
-      filter: drop-shadow(6px 8px 14px rgba(0, 0, 0, 0.35));
+      transform: rotate(-4deg);
     }
 
     .right {
@@ -62,6 +74,7 @@
       flex-direction: column;
       justify-content: center;
       text-align: left;
+      margin-left: 40px;
     }
 
     .title {
@@ -185,11 +198,7 @@
 
       .right {
         text-align: center;
-      }
-
-      .details-container {
-        flex-direction: column;
-        align-items: flex-start;
+        margin-left: 0;
       }
 
       .vinyl {
@@ -200,7 +209,8 @@
 </head>
 <body>
   <div class="container">
-    <div class="left">
+    <div class="vinyl-container">
+      <div class="shadow"></div>
       <img src="COVER RETRO X HD.jpg" alt="Cover Vinyle Retro X" class="cover" />
       <img src="vinyle.png" alt="Vinyle" class="vinyl" />
     </div>
