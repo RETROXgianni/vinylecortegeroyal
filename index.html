@@ -426,12 +426,13 @@
   </form>
 
   <script>
-    setTimeout(function() {
-      var vinyl = document.querySelector('.vinyl-rotate');
-      if (vinyl) {
-        vinyl.classList.remove('vinyl-rotate');
-      }
-    }, 8400); // 8.4 secondes = 2 tours complets
+  setTimeout(function() {
+    var vinyl = document.querySelector('.vinyl-rotate');
+    if (vinyl) {
+      vinyl.classList.remove('vinyl-rotate');
+      vinyl.style.transform = 'rotate(0deg)';
+    }
+  }, 9000); // 9 secondes
   </script>
 </body>
 </html>
