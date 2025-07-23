@@ -91,7 +91,9 @@
       position: absolute;
       top: -18%;
       right: -80%;
-      width: 720px;
+      width: 35vw; /* Utilise 45% de la largeur de la fenêtre */
+      max-width: 720px;
+      min-width: 220px;
       z-index: -1;
       opacity: 0.9;
       animation: float 3.5s ease-in-out infinite;
@@ -336,6 +338,32 @@
       transition: transform 0.2s cubic-bezier(.03,.98,.52,.99);
       will-change: transform;
     }
+
+    @media (max-width: 900px) {
+  .vinyl {
+    width: 60vw;
+    max-width: 340px;
+    min-width: 120px;
+    top: -5%;      /* <-- baisse le vinyle */
+    right: -40%;
+  }
+  .left {
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 600px) {
+  .vinyl {
+    width: 80vw;
+    max-width: 220px;
+    min-width: 80px;
+    top: 10%;      /* <-- baisse encore plus sur mobile */
+    right: -10%;
+  }
+  .left {
+    max-width: 220px;
+  }
+}
 
     @media (max-width: 768px) {
       .container {
